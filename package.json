@@ -1,0 +1,19 @@
+{
+  "name": "adminbro-test",
+  "version": "1.0.0",
+  "description": "admin bro test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nab5m",
+  "license": "MIT",
+  "dependencies": {
+    "@admin-bro/express": "^3.0.1",
+    "admin-bro": "^3.3.1",
+    "admin-bro-firebase": "^1.1.2",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "firebase": "^8.0.0"
+  }
+}
