@@ -4,14 +4,23 @@
   "description": "admin bro test",
   "main": "index.js",
   "scripts": {
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nab5m",
   "license": "MIT",
   "dependencies": {
+    "@admin-bro/design-system": "^1.7.0",
     "@admin-bro/express": "^3.0.1",
+    "@ckeditor/ckeditor5-build-classic": "^24.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^24.0.0",
+    "@ckeditor/ckeditor5-image": "^24.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.0",
+    "@tirrilee/admin-bro": "^0.0.5",
+    "@tirrilee/admin-bro-design-system": "^1.0.3",
+    "@tirrilee/admin-bro-firebase": "^1.0.7",
     "admin-bro": "^3.3.1",
-    "admin-bro-firebase": "^1.1.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "firebase": "^8.0.0"
