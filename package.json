@@ -4,7 +4,7 @@
   "description": "admin bro test",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "pm2 start index.js",
     "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "firebase": "^8.0.0",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "pm2": "^4.5.1"
   }
 }
