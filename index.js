@@ -16,45 +16,49 @@ const adminBro = new AdminBro({
   rootPath: '/admin',
   resources: [
     {
-      collection: FireStore.collection('Profiles'),
+      collection: FireStore.collection('Notice'),
       schema: {
-        name: 'richtext',
-        // images: {
-        //   type: 'mixed',
-        //   schema: {
-        //     key: 'string',
-        //     bucket: 'string',
-        //     mimeType: 'string',
-        //     filename: 'string',
-        //   }
-        // }
+        order: 'number',
+        title: 'string',
+        contents: 'richtext',
       },
       options: {
         properties: {
-          name: {
+          contents: {
             components: {
               edit: AdminBro.bundle('./components/TextEditor'),
             },
           },
         },
       },
-      // features: [uploadFeature({
-      //   properties: {
-      //     file: 'images.file',
-      //     filePath: 'images.path',
-      //     filename: 'images.filename',
-      //     filesToDelete: 'images.toDelete',
-      //     key: 'images.key',
-      //     mimeType: 'images.mimeType',
-      //     bucket: 'images.bucket',
-      //   },
-      //   provider: {
-      //     gcp: {
-      //       bucket: process.env.FIREBASE_STORAGE_BUCKET,
-      //       expires: 0,
-      //     },
-      //   },
-      // })],
+    },
+    {
+      collection: FireStore.collection('Profiles'),
+      schema: {
+        name: 'string',
+        nickname: 'string',
+        age: 'string',
+        image: {
+          type: 'mixed',
+        }
+      },
+      features: [uploadFeature({
+        properties: {
+          file: 'image.file',
+          filePath: 'image.path',
+          filename: 'image.filename',
+          filesToDelete: 'image.toDelete',
+          key: 'image.key',
+          mimeType: 'image.mimeType',
+          bucket: 'image.bucket',
+        },
+        provider: {
+          gcp: {
+            bucket: process.env.FIREBASE_STORAGE_BUCKET,
+            expires: 0,
+          },
+        },
+      })],
     }
   ],
 })
