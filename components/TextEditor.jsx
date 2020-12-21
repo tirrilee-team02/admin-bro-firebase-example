@@ -1,4 +1,5 @@
 import { RichText } from '@admin-bro/design-system'
+// import {Storage} from '../FirebaseConfig';
 
 export default function TextEditor(props) {
   const { property, record, onChange } = props
@@ -27,8 +28,6 @@ export default function TextEditor(props) {
       }}
       value={value}
       onChange={(text) => {
-        console.log(text);
-        // here
         onChange({
           ...record,
           params: {
