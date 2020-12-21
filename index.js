@@ -62,4 +62,4 @@ const adminBro = new AdminBro({
 const router = AdminBroExpress.buildRouter(adminBro)
 
 app.use(adminBro.options.rootPath, router)
-app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
+app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:8080/admin'))
