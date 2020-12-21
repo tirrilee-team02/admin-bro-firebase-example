@@ -13,3 +13,9 @@ $ npm run dev | yarn dev
 
 ## GCP 인증하기
 https://cloud.google.com/docs/authentication/getting-started
+
+## 사용 가능한 필드 목록
+- string, number, boolean
+- textarea, richtext, password
+- array, mixed, reference
+- date, datetime

@@ -40,6 +40,14 @@ const adminBro = new AdminBro({
         age: 'string',
         image: {
           type: 'mixed',
+        },
+        createdAt: 'datetime',
+      },
+      options: {
+        properties: {
+          createdAt: {
+            isVisible: { list: true, show: true, edit: false },
+          }
         }
       },
       features: [uploadFeature({
@@ -63,7 +71,7 @@ const adminBro = new AdminBro({
   ],
 })
 
-const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
+const router = process.env.LOGIN_REQUIRED === 'true' ? AdminBroExpress.buildAuthenticatedRouter(adminBro, {
   authenticate: async (email, password) => {
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
       return true
@@ -71,7 +79,7 @@ const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
     return false
   },
   cookiePassword: 'some-secret-password-used-to-secure-cookie',
-})
+}) : AdminBroExpress.buildRouter(adminBro)
 
 app.use(adminBro.options.rootPath, router)
 app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:8080/admin'))
