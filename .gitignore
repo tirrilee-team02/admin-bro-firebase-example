@@ -1,3 +1,6 @@
+.env*
+!.env-example
+
 .adminbro
 node_modules
 .idea
