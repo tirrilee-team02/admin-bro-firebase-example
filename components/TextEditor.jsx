@@ -1,5 +1,4 @@
 import { RichText } from '@admin-bro/design-system'
-// import {Storage} from '../FirebaseConfig';
 
 export default function TextEditor(props) {
   const { property, record, onChange } = props

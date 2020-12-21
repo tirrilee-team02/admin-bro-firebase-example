@@ -1,6 +1,9 @@
 .env*
 !.env-example
 
+gcp-service-account.json
+!gcp-service-account-example.json
+
 .adminbro
 node_modules
 .idea
