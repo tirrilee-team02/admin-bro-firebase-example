@@ -63,7 +63,15 @@ const adminBro = new AdminBro({
   ],
 })
 
-const router = AdminBroExpress.buildRouter(adminBro)
+const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
+  authenticate: async (email, password) => {
+    if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+      return true
+    }
+    return false
+  },
+  cookiePassword: 'some-secret-password-used-to-secure-cookie',
+})
 
 app.use(adminBro.options.rootPath, router)
 app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:8080/admin'))
