@@ -21,7 +21,7 @@
     "@google-cloud/storage": "^5.7.0",
     "@tirrilee/admin-bro": "^0.0.5",
     "@tirrilee/admin-bro-design-system": "^1.0.3",
-    "@tirrilee/admin-bro-firebase": "^1.0.20",
+    "@tirrilee/admin-bro-firebase": "^1.0.21",
     "admin-bro": "^3.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

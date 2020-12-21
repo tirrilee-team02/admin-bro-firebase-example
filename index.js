@@ -21,6 +21,8 @@ const adminBro = new AdminBro({
         order: 'number',
         title: 'string',
         contents: 'richtext',
+        createdAt: 'datetime',
+        updatedAt: 'datetime',
       },
       options: {
         properties: {
@@ -28,6 +30,12 @@ const adminBro = new AdminBro({
             components: {
               edit: AdminBro.bundle('./components/TextEditor'),
             },
+          },
+          createdAt: {
+            isVisible: { list: true, show: true, edit: false },
+          },
+          updatedAt: {
+            isVisible: { list: true, show: true, edit: false },
           },
         },
       },
@@ -42,12 +50,16 @@ const adminBro = new AdminBro({
           type: 'mixed',
         },
         createdAt: 'datetime',
+        updatedAt: 'datetime',
       },
       options: {
         properties: {
           createdAt: {
             isVisible: { list: true, show: true, edit: false },
-          }
+          },
+          updatedAt: {
+            isVisible: { list: true, show: true, edit: false },
+          },
         }
       },
       features: [uploadFeature({
