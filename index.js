@@ -139,7 +139,7 @@ const router = process.env.LOGIN_REQUIRED === 'true' ? AdminBroExpress.buildAuth
 
 const port = process.env.PORT || 3000;
 const host =
-  process.env.NODE_ENV === 'production' ? 'localhost' : '0.0.0.0'
+  process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost'
 
 app.use(adminBro.options.rootPath, router)
 app.listen(
