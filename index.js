@@ -1,6 +1,11 @@
 const path = require('path')
-const envFileName = process.env.NODE_ENV === 'production' ? 'env-production' : 'env-local'
-require('dotenv').config({ path: path.resolve(process.cwd(), envFileName) })
+require('dotenv').config({
+  path:
+    path.resolve(
+      process.cwd(),
+      process.env.NODE_ENV === 'production' ? '.env-production' : '.env-local'
+    )
+})
 
 const {FireStore} = require('./FirebaseConfig')
 
@@ -132,11 +137,13 @@ const router = process.env.LOGIN_REQUIRED === 'true' ? AdminBroExpress.buildAuth
   cookiePassword: 'some-secret-password-used-to-secure-cookie',
 }) : AdminBroExpress.buildRouter(adminBro)
 
-const port = process.env.PORT || 3000
-
-app.get('', (req, res) => {
-  res.send('안녕하세요 티릴리 관리자 입니다 /admin')
-})
+const port = process.env.PORT || 3000;
+const host =
+  process.env.NODE_ENV === 'production' ? 'localhost' : '0.0.0.0'
 
 app.use(adminBro.options.rootPath, router)
-app.listen(port, '0.0.0.0', () => console.log('AdminBro is under localhost:' + port + '/admin'))
+app.listen(
+  port,
+  host,
+  () => console.log('AdminBro is under localhost:' + port + '/admin')
+)
