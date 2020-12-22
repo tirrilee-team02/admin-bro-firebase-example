@@ -4,8 +4,8 @@
   "description": "admin bro test",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js",
-    "dev": "node index.js",
+    "start": "NODE_PATH=. nodemon",
+    "dev": "NODE_PATH=. nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nab5m",
@@ -30,5 +30,8 @@
     "firebase": "^8.0.0",
     "moment": "^2.29.1",
     "pm2": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
