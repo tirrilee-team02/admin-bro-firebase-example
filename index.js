@@ -141,4 +141,4 @@ app.get('/admin', (req, res) => {
 })
 
 // app.use(adminBro.options.rootPath, router)
-app.listen(port, () => console.log('AdminBro is under localhost:' + port + '/admin'))
+app.listen(port, '0.0.0.0', () => console.log('AdminBro is under localhost:' + port + '/admin'))
