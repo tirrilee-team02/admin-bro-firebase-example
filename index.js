@@ -132,4 +132,4 @@ const router = process.env.LOGIN_REQUIRED === 'true' ? AdminBroExpress.buildAuth
 }) : AdminBroExpress.buildRouter(adminBro)
 
 app.use(adminBro.options.rootPath, router)
-app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:8080/admin'))
+app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:3000/admin'))
