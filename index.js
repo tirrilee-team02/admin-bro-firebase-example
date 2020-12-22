@@ -1,5 +1,5 @@
 const path = require('path')
-require('dotenv').config({ path: path.resolve(process.cwd(), '.env-local') })
+require('dotenv').config({ path: path.resolve(process.cwd(), '.env-production') })
 
 const {FireStore} = require('./FirebaseConfig')
 
@@ -132,4 +132,4 @@ const router = process.env.LOGIN_REQUIRED === 'true' ? AdminBroExpress.buildAuth
 }) : AdminBroExpress.buildRouter(adminBro)
 
 app.use(adminBro.options.rootPath, router)
-app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:3000/admin'))
+app.listen(process.env.PORT || 3000, () => console.log('AdminBro is under localhost:' + process.env.PORT || 3000 + '/admin'))
