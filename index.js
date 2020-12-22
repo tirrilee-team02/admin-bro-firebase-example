@@ -135,11 +135,8 @@ const router = process.env.LOGIN_REQUIRED === 'true' ? AdminBroExpress.buildAuth
 const port = process.env.PORT || 3000
 
 app.get('', (req, res) => {
-  res.send('안녕하세요')
-})
-app.get('/admin', (req, res) => {
-  res.send('관리자 페이지입니다')
+  res.send('안녕하세요 티릴리 관리자 입니다 /admin')
 })
 
-// app.use(adminBro.options.rootPath, router)
+app.use(adminBro.options.rootPath, router)
 app.listen(port, '0.0.0.0', () => console.log('AdminBro is under localhost:' + port + '/admin'))
