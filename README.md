@@ -1,7 +1,11 @@
 # 어드민브로 example
 
 ## 미리보기
-https://admin-bro-example.herokuapp.com/admin
+https://tirrilee-admin.herokuapp.com/admin
+```text
+id: tester
+pw: tester123
+```
 
 ## 퀵 스타트
 ```shell script
