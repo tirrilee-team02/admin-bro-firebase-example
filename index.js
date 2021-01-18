@@ -1,7 +1,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(process.cwd(), '.env-local') });
 
-// const Profile = require('./resources/Profile');
+const Profile = require('./resources/Profile');
 const User = require('./resources/User');
 
 const Locale = require('./locale');
