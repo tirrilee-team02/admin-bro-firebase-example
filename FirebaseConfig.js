@@ -1,6 +1,6 @@
-const firebase = require("firebase/app");
-require("firebase/firestore");
-require("firebase/storage");
+const firebase = require('firebase/app');
+require('firebase/firestore');
+require('firebase/storage');
 
 // 파이어베이스 웹 플랫폼 추가하면 나옴
 const firebaseConfig = {
@@ -11,11 +11,11 @@ const firebaseConfig = {
   storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
-if(!firebase.apps.length) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
@@ -26,4 +26,4 @@ module.exports = {
   firebase,
   FireStore,
   Storage,
-}
+};
