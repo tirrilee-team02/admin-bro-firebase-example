@@ -19,17 +19,20 @@ module.exports = {
       // ...
     },
     labels: {
-      User: '사용자',
-      // Profiles: '프로필',
+      Notice: '공지사항',
+      Profiles: '프로필',
     },
     properties: {
+      createdAt: '생성 시간',
+      updatedAt: '수정 시간',
       order: '순서',
       title: '제목',
       contents: '내용',
 
       name: '이름',
+      image: '사진',
+      age: '나이',
       nickname: '닉네임',
-      profile: '프로필',
     },
   },
 };

@@ -2,7 +2,7 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(process.cwd(), '.env-local') });
 
 const Profile = require('./resources/Profile');
-const User = require('./resources/User');
+const Notice = require('./resources/Notice');
 
 const Locale = require('./locale');
 
@@ -16,7 +16,7 @@ const app = express();
 AdminBro.registerAdapter(AdminBroFirebase.FirestoreAdapter);
 const adminBro = new AdminBro({
   rootPath: '/admin',
-  resources: [User],
+  resources: [Profile, Notice],
   locale: Locale,
 });
 
@@ -38,5 +38,5 @@ const router =
 
 app.use(adminBro.options.rootPath, router);
 app.listen(process.env.PORT || 3000, () =>
-  console.log(`AdminBro is under localhost:${process.env.PORT || 3000}/admin`),
+  console.log('AdminBro is under localhost:3000/admin'),
 );
