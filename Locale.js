@@ -13,26 +13,23 @@ module.exports = {
       filters: '필터',
       applyChanges: '저장',
       Reset: '리셋',
-    // We use i18next with its pluralization logic.
-    // confirmRemovalMany_1: 'Potwierdź usunięcie {{count}} rekordu',
-    // confirmRemovalMany_2: 'Potwierdź usunięcie {{count}} rekordów',
-    // ...
+      // We use i18next with its pluralization logic.
+      // confirmRemovalMany_1: 'Potwierdź usunięcie {{count}} rekordu',
+      // confirmRemovalMany_2: 'Potwierdź usunięcie {{count}} rekordów',
+      // ...
     },
     labels: {
-      Notice: '공지사항',
-      Profiles: '프로필',
+      User: '사용자',
+      // Profiles: '프로필',
     },
     properties: {
-      createdAt: '생성 시간',
-      updatedAt: '수정 시간',
       order: '순서',
       title: '제목',
       contents: '내용',
 
       name: '이름',
-      image: '사진',
-      age: '나이',
-      nickname: '닉네임'
+      nickname: '닉네임',
+      profile: '프로필',
     },
-  }
-}
+  },
+};
